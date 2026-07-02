@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lightning Multi Address Checker</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+
+<meta name="theme-color" content="#0d1117">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<h1>⚡ Lightning Multi Address Checker</h1>
+
+<p>Powered by Sparkscan API</p>
+
+</header>
+
+<div class="card">
+
+<h2>Wallet Input</h2>
+
+<textarea
+id="addressInput"
+placeholder="Paste one Spark address per line..."></textarea>
+
+<div class="buttons">
+
+<button id="uploadBtn">
+📂 Upload TXT
+</button>
+
+<button id="startBtn">
+▶ Start Checking
+</button>
+
+<button id="exportBtn" disabled>
+⬇ Export CSV
+</button>
+
+<input
+type="file"
+id="fileInput"
+accept=".txt"
+hidden>
+
+</div>
+
+</div>
+
+<div class="card progress-card">
+
+<h2>Progress</h2>
+
+<div class="progress">
+
+<div
+id="progressBar"
+class="progress-bar">
+
+</div>
+
+</div>
+
+<div id="progressText">
+
+0 / 0
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Dashboard</h2>
+
+<div class="summary">
+
+    <div class="box">
+        <span>Total Value</span>
+        <strong id="usdTotal">$0.00</strong>
+        <small id="hardUsd">$0.00 Hard</small>
+    </div>
+
+    <div class="box">
+        <span>BTC Balance</span>
+        <strong id="btcTotal">0 BTC</strong>
+        <small id="hardBtc">0 BTC Hard</small>
+    </div>
+
+    <div class="box">
+        <span>Token Value</span>
+        <strong id="tokenUsd">$0.00</strong>
+        <small id="tokenCount">0 Tokens</small>
+    </div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Results</h2>
+
+<div id="resultContainer" class="wallet-list">
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+Lightning Checker PWA v1.0
+
+</footer>
+
+</div>
+
+<script src="api.js"></script>
+<script src="csv.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

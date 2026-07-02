@@ -1,0 +1,294 @@
+/* ==========================
+   Lightning Checker v1.0
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#0d1117;
+    color:#fff;
+    padding:20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+header{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+header h1{
+    font-size:30px;
+    color:#58a6ff;
+}
+
+header p{
+    color:#8b949e;
+    margin-top:5px;
+}
+
+.card{
+    background:#161b22;
+    border:1px solid #30363d;
+    border-radius:10px;
+    padding:14px;
+    margin-bottom:8px;
+}
+.card.progress-card{
+
+    padding:10px 20px;
+
+}
+
+.card.progress-card h2{
+
+    margin-bottom:10px;
+
+}
+
+.card.progress-card #progressText{
+
+    margin-top:6px;
+
+}
+
+.card h2{
+    margin-bottom:8px;
+}
+
+textarea{
+    width:100%;
+    height:180px;
+    background:#0d1117;
+    color:#fff;
+    border:1px solid #30363d;
+    border-radius:8px;
+    padding:10px;
+    resize:vertical;
+    font-size:14px;
+}
+
+.buttons{
+    margin-top:15px;
+    display:flex;
+    gap:10px;
+}
+
+.buttons button{
+    flex:1;
+}
+
+button{
+    padding:10px 18px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    background:#238636;
+    color:white;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+button:disabled{
+    background:#555;
+}
+
+.progress{
+    width:100%;
+    height:10px;
+    background:#30363d;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:#2ea043;
+    transition:.3s;
+}
+
+#progressText{
+    margin-top:10px;
+}
+
+.summary{
+    display:flex;
+    gap:12px;
+}
+
+.summary .box{
+    flex:1;
+}
+
+.box{
+    background:#0d1117;
+    border:1px solid #30363d;
+    border-radius:8px;
+    padding:10px;
+}
+
+.box span{
+    display:block;
+    color:#8b949e;
+    margin-bottom:8px;
+}
+
+.box strong{
+    font-size:18px;
+}
+.box small{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:#8b949e;
+
+    font-size:12px;
+
+}
+
+.table-wrapper{
+    overflow:auto;
+}
+
+table{
+    width:100%;
+    table-layout:fixed;
+    border-collapse:collapse;
+    font-size:11px;
+}
+
+th{
+    background:#21262d;
+}
+
+th,td{
+    padding:6px 4px;
+    border:1px solid #30363d;
+    text-align:center;
+    font-size:11px;
+    word-break:break-word;
+}
+
+tr:nth-child(even){
+    background:#161b22;
+}
+
+.active{
+    color:#2ea043;
+    font-weight:bold;
+}
+
+.inactive{
+    color:#f85149;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    margin-top:30px;
+    color:#8b949e;
+}
+
+@media(max-width:700px){
+
+header h1{
+    font-size:24px;
+}
+
+
+th,td{
+    font-size:12px;
+}
+
+}
+/* ==========================
+   Wallet Card
+========================== */
+
+.wallet-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.wallet-card{
+    background:#161b22;
+    border:1px solid #30363d;
+    border-radius:12px;
+    padding:16px;
+}
+
+.wallet-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+}
+
+.wallet-address{
+    color:#28c840;
+    font-weight:bold;
+    word-break:break-all;
+}
+
+.wallet-status{
+    font-weight:bold;
+}
+
+.wallet-status.active{
+    color:#2ea043;
+}
+
+.wallet-status.empty{
+    color:#d29922;
+}
+
+.wallet-status.error{
+    color:#f85149;
+}
+
+.wallet-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin-top:10px;
+}
+
+.wallet-item span{
+    display:block;
+    color:#8b949e;
+    font-size:12px;
+}
+
+.wallet-item strong{
+    font-size:16px;
+    
+.tx-table small{
+ display:block;
+ color:#8b949e;
+ font-size:10px;
+ margin-top:2px;
+}
+.receive{
+    color:#2ea043;
+    font-weight:bold;
+}
+
+.sent{
+    color:#f85149;
+    font-weight:bold;
+}
