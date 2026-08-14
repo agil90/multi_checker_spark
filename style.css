@@ -29,19 +29,19 @@ button:disabled{background:#555}
 .box small{display:block;margin-top:3px;color:#8b949e;font-size:12px}
 footer{text-align:center;margin-top:30px;color:#8b949e}
 .wallet-list{display:flex;flex-direction:column;gap:16px}
-.wallet-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:16px}
+.wallet-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:14px}
 .wallet-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.wallet-address{color:#28c840;font-weight:bold;font-size:19px;word-break:break-all}
+.wallet-address{color:#28c840;font-weight:bold;font-size:17px;word-break:break-all;line-height:1.25}
 .wallet-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
 .wallet-item span{display:block;color:#8b949e;font-size:12px}
 .wallet-item strong{font-size:16px}
 .tx-table-wrapper{width:100%;overflow-x:auto;margin-top:12px}
-.tx-table{width:100%;min-width:0;border-collapse:collapse;font-size:12px;table-layout:fixed}
+.tx-table{width:100%;min-width:0;border-collapse:collapse;font-size:11px;table-layout:fixed}
 .tx-table th{background:#21262d}
-.tx-table th,.tx-table td{padding:7px 4px;border:1px solid #30363d;text-align:center;font-size:12px}
+.tx-table th,.tx-table td{padding:6px 3px;border:1px solid #30363d;text-align:center;font-size:11px}
 .tx-table tr:nth-child(even){background:#161b22}
 .tx-table td{word-break:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tx-table small{display:block;color:#8b949e;font-size:12px;margin-top:2px}
+.tx-table small{display:block;color:#8b949e;font-size:11px;margin-top:2px}
 /* Warna teks transaksi — background tabel tetap sama. */
 .tx-table tr.tx-received-recent td{color:#f2cc60;font-weight:700}
 .tx-table tr.tx-received-old td{color:#39d353;font-weight:700}
@@ -68,8 +68,8 @@ footer{text-align:center;margin-top:30px;color:#8b949e}
   .box strong{font-size:15px}
   th,td{font-size:11px}
   .buttons{flex-direction:column}
-  .tx-table{min-width:0;width:100%;table-layout:fixed;font-size:12px}
-  .tx-table th,.tx-table td{padding:7px 3px;font-size:12px;white-space:nowrap}
+  .tx-table{min-width:0;width:100%;table-layout:fixed;font-size:11px}
+  .tx-table th,.tx-table td{padding:6px 3px;font-size:11px;white-space:nowrap}
   .tx-table th:nth-child(1),.tx-table td:nth-child(1){width:16%}
   .tx-table th:nth-child(2),.tx-table td:nth-child(2){width:13%}
   .tx-table th:nth-child(3),.tx-table td:nth-child(3){width:13%}
