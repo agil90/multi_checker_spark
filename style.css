@@ -68,16 +68,21 @@ footer{text-align:center;margin-top:30px;color:#8b949e}
   .box strong{font-size:15px}
   th,td{font-size:11px}
   .buttons{flex-direction:column}
-  .tx-table{min-width:0;width:100%;table-layout:fixed;font-size:12px}
-  .tx-table th,.tx-table td{padding:7px 3px;font-size:12px;white-space:nowrap}
-  .tx-table th:nth-child(1),.tx-table td:nth-child(1){width:16%}
-  .tx-table th:nth-child(2),.tx-table td:nth-child(2){width:13%}
-  .tx-table th:nth-child(3),.tx-table td:nth-child(3){width:13%}
-  .tx-table th:nth-child(4),.tx-table td:nth-child(4){width:13%}
-  .tx-table th:nth-child(5),.tx-table td:nth-child(5){width:16%}
-  .tx-table th:nth-child(6),.tx-table td:nth-child(6){width:10%}
-  .tx-table th:nth-child(7),.tx-table td:nth-child(7){width:19%}
-  .tx-table-wrapper{overflow-x:hidden}
+  .tx-table{min-width:0;width:100%;table-layout:fixed;font-size:10px}
+.tx-table th,.tx-table td{padding:6px 2px;font-size:10px;white-space:nowrap}
+.tx-table th:nth-child(1),.tx-table td:nth-child(1){width:15%}
+.tx-table th:nth-child(2),.tx-table td:nth-child(2){width:13%}
+.tx-table th:nth-child(3),.tx-table td:nth-child(3){width:12%}
+.tx-table th:nth-child(4),.tx-table td:nth-child(4){width:12%}
+.tx-table th:nth-child(5),.tx-table td:nth-child(5){width:20%}
+.tx-table th:nth-child(6),.tx-table td:nth-child(6){width:10%}
+.tx-table th:nth-child(7),.tx-table td:nth-child(7){width:18%}
+.tx-table-wrapper{overflow-x:hidden}
+   
+.wallet-address{
+  font-size:15px;
+  line-height:1.35;
+}
 }
 
 /* Age mengikuti warna seluruh teks pada baris transaksi. */
