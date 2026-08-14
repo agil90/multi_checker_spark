@@ -1,8 +1,7 @@
 /* ==========================
    Lightning Checker v1.2
 ========================== */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&display=swap');
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto Condensed',Arial,Helvetica,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 body{background:#0d1117;color:#fff;padding:20px}
 .container{max-width:1200px;margin:auto}
 header{text-align:center;margin-bottom:20px}
@@ -61,8 +60,8 @@ footer{text-align:center;margin-top:30px;color:#8b949e}
   .box strong{font-size:15px}
   th,td{font-size:11px}
   .buttons{flex-direction:column}
-  .tx-table{min-width:0;width:100%;table-layout:fixed;font-size:8.5px}
-  .tx-table th,.tx-table td{padding:6px 2px;font-size:8.5px;white-space:nowrap}
+  .tx-table{min-width:0;width:100%;table-layout:fixed;font-size:11px}
+  .tx-table th,.tx-table td{padding:7px 5px;font-size:11px;white-space:nowrap}
   .tx-table th:nth-child(1),.tx-table td:nth-child(1){width:17%}
   .tx-table th:nth-child(2),.tx-table td:nth-child(2){width:11%}
   .tx-table th:nth-child(3),.tx-table td:nth-child(3){width:14%}
