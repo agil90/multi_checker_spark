@@ -1,0 +1,9 @@
+{
+  "name": "Lightning Multi Address Checker",
+  "short_name": "Lightning Checker",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#0d1117",
+  "description": "Lightning Multi Address Checker PWA"
+}

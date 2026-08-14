@@ -1,294 +1,79 @@
 /* ==========================
-   Lightning Checker v1.0
+   Lightning Checker v1.2
 ========================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
-}
-
-body{
-    background:#0d1117;
-    color:#fff;
-    padding:20px;
-}
-
-.container{
-    max-width:1200px;
-    margin:auto;
-}
-
-header{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-header h1{
-    font-size:30px;
-    color:#58a6ff;
-}
-
-header p{
-    color:#8b949e;
-    margin-top:5px;
-}
-
-.card{
-    background:#161b22;
-    border:1px solid #30363d;
-    border-radius:10px;
-    padding:14px;
-    margin-bottom:8px;
-}
-.card.progress-card{
-
-    padding:10px 20px;
-
-}
-
-.card.progress-card h2{
-
-    margin-bottom:10px;
-
-}
-
-.card.progress-card #progressText{
-
-    margin-top:6px;
-
-}
-
-.card h2{
-    margin-bottom:8px;
-}
-
-textarea{
-    width:100%;
-    height:180px;
-    background:#0d1117;
-    color:#fff;
-    border:1px solid #30363d;
-    border-radius:8px;
-    padding:10px;
-    resize:vertical;
-    font-size:14px;
-}
-
-.buttons{
-    margin-top:15px;
-    display:flex;
-    gap:10px;
-}
-
-.buttons button{
-    flex:1;
-}
-
-button{
-    padding:10px 18px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:bold;
-    background:#238636;
-    color:white;
-}
-
-button:hover{
-    opacity:.9;
-}
-
-button:disabled{
-    background:#555;
-}
-
-.progress{
-    width:100%;
-    height:10px;
-    background:#30363d;
-    border-radius:10px;
-    overflow:hidden;
-}
-
-.progress-bar{
-    width:0%;
-    height:100%;
-    background:#2ea043;
-    transition:.3s;
-}
-
-#progressText{
-    margin-top:10px;
-}
-
-.summary{
-    display:flex;
-    gap:12px;
-}
-
-.summary .box{
-    flex:1;
-}
-
-.box{
-    background:#0d1117;
-    border:1px solid #30363d;
-    border-radius:8px;
-    padding:10px;
-}
-
-.box span{
-    display:block;
-    color:#8b949e;
-    margin-bottom:8px;
-}
-
-.box strong{
-    font-size:18px;
-}
-.box small{
-
-    display:block;
-
-    margin-top:3px;
-
-    color:#8b949e;
-
-    font-size:12px;
-
-}
-
-.table-wrapper{
-    overflow:auto;
-}
-
-table{
-    width:100%;
-    table-layout:fixed;
-    border-collapse:collapse;
-    font-size:11px;
-}
-
-th{
-    background:#21262d;
-}
-
-th,td{
-    padding:6px 4px;
-    border:1px solid #30363d;
-    text-align:center;
-    font-size:11px;
-    word-break:break-word;
-}
-
-tr:nth-child(even){
-    background:#161b22;
-}
-
-.active{
-    color:#2ea043;
-    font-weight:bold;
-}
-
-.inactive{
-    color:#f85149;
-    font-weight:bold;
-}
-
-footer{
-    text-align:center;
-    margin-top:30px;
-    color:#8b949e;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#0d1117;color:#fff;padding:20px}
+.container{max-width:1200px;margin:auto}
+header{text-align:center;margin-bottom:20px}
+header h1{font-size:30px;color:#58a6ff}
+header p{color:#8b949e;margin-top:5px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:14px;margin-bottom:8px}
+.card.progress-card{padding:10px 20px}
+.card.progress-card h2{margin-bottom:10px}
+.card.progress-card #progressText{margin-top:6px}
+.card h2{margin-bottom:8px}
+textarea{width:100%;height:180px;background:#0d1117;color:#fff;border:1px solid #30363d;border-radius:8px;padding:10px;resize:vertical;font-size:14px}
+.buttons{margin-top:15px;display:flex;gap:10px}
+.buttons button{flex:1}
+button{padding:10px 18px;border:none;border-radius:8px;cursor:pointer;font-weight:bold;background:#238636;color:white}
+button:hover{opacity:.9}
+button:disabled{background:#555}
+.progress{width:100%;height:10px;background:#30363d;border-radius:10px;overflow:hidden}
+.progress-bar{width:0%;height:100%;background:#2ea043;transition:.3s}
+#progressText{margin-top:10px}
+.summary{display:flex;gap:12px}
+.summary .box{flex:1}
+.box{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:10px}
+.box span{display:block;color:#8b949e;margin-bottom:8px}
+.box strong{font-size:18px}
+.box small{display:block;margin-top:3px;color:#8b949e;font-size:12px}
+footer{text-align:center;margin-top:30px;color:#8b949e}
+.wallet-list{display:flex;flex-direction:column;gap:16px}
+.wallet-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:16px}
+.wallet-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.wallet-address{color:#28c840;font-weight:bold;font-size:19px;word-break:break-all}
+.wallet-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+.wallet-item span{display:block;color:#8b949e;font-size:12px}
+.wallet-item strong{font-size:16px}
+.tx-table-wrapper{width:100%;overflow-x:auto;margin-top:12px}
+.tx-table{width:100%;min-width:0;border-collapse:collapse;font-size:12px;table-layout:fixed}
+.tx-table th{background:#21262d}
+.tx-table th,.tx-table td{padding:8px 5px;border:1px solid #30363d;text-align:center;font-size:13px}
+.tx-table tr:nth-child(even){background:#161b22}
+.tx-table td{word-break:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tx-table small{display:block;color:#8b949e;font-size:12px;margin-top:2px}
+/* Warna teks transaksi — background tabel tetap sama. */
+.tx-table tr.tx-received-recent td{color:#f2cc60;font-weight:700}
+.tx-table tr.tx-received-old td{color:#39d353;font-weight:700}
+.tx-table tr.tx-sent td{color:#ff4d4d;font-weight:700}
+.tx-table tr.tx-received-recent td small,
+.tx-table tr.tx-received-old td small,
+.tx-table tr.tx-sent td small{color:inherit}
+.tx-table tr.tx-received-recent .tx-age,
+.tx-table tr.tx-received-old .tx-age,
+.tx-table tr.tx-sent .tx-age{color:inherit}
 @media(max-width:700px){
-
-header h1{
-    font-size:24px;
+  body{padding:12px}
+  header h1{font-size:24px}
+  .summary{gap:6px}
+  .box{padding:8px}
+  .box strong{font-size:15px}
+  th,td{font-size:11px}
+  .buttons{flex-direction:column}
+  .tx-table{min-width:0;width:100%;table-layout:fixed;font-size:12px}
+  .tx-table th,.tx-table td{padding:8px 3px;font-size:13px;white-space:nowrap}
+  .tx-table th:nth-child(1),.tx-table td:nth-child(1){width:16%}
+  .tx-table th:nth-child(2),.tx-table td:nth-child(2){width:13%}
+  .tx-table th:nth-child(3),.tx-table td:nth-child(3){width:13%}
+  .tx-table th:nth-child(4),.tx-table td:nth-child(4){width:13%}
+  .tx-table th:nth-child(5),.tx-table td:nth-child(5){width:16%}
+  .tx-table th:nth-child(6),.tx-table td:nth-child(6){width:10%}
+  .tx-table th:nth-child(7),.tx-table td:nth-child(7){width:19%}
+  .tx-table-wrapper{overflow-x:hidden}
 }
 
+/* Age mengikuti warna seluruh teks pada baris transaksi. */
 
-th,td{
-    font-size:12px;
-}
-
-}
-/* ==========================
-   Wallet Card
-========================== */
-
-.wallet-list{
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-}
-
-.wallet-card{
-    background:#161b22;
-    border:1px solid #30363d;
-    border-radius:12px;
-    padding:16px;
-}
-
-.wallet-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:12px;
-}
-
-.wallet-address{
-    color:#28c840;
-    font-weight:bold;
-    word-break:break-all;
-}
-
-.wallet-status{
-    font-weight:bold;
-}
-
-.wallet-status.active{
-    color:#2ea043;
-}
-
-.wallet-status.empty{
-    color:#d29922;
-}
-
-.wallet-status.error{
-    color:#f85149;
-}
-
-.wallet-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-    margin-top:10px;
-}
-
-.wallet-item span{
-    display:block;
-    color:#8b949e;
-    font-size:12px;
-}
-
-.wallet-item strong{
-    font-size:16px;
-    
-.tx-table small{
- display:block;
- color:#8b949e;
- font-size:10px;
- margin-top:2px;
-}
-.receive{
-    color:#2ea043;
-    font-weight:bold;
-}
-
-.sent{
-    color:#f85149;
-    font-weight:bold;
-}
+/* Final transaction text-color enforcement */
+.tx-table td.tx-age,
+.tx-table td.tx-age small{font-weight:700}
