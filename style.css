@@ -38,7 +38,7 @@ footer{text-align:center;margin-top:30px;color:#8b949e}
 .tx-table-wrapper{width:100%;overflow-x:auto;margin-top:12px}
 .tx-table{width:100%;min-width:0;border-collapse:collapse;font-size:12px;table-layout:fixed}
 .tx-table th{background:#21262d}
-.tx-table th,.tx-table td{padding:8px 5px;border:1px solid #30363d;text-align:center;font-size:13px}
+.tx-table th,.tx-table td{padding:7px 4px;border:1px solid #30363d;text-align:center;font-size:12px}
 .tx-table tr:nth-child(even){background:#161b22}
 .tx-table td{word-break:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tx-table small{display:block;color:#8b949e;font-size:12px;margin-top:2px}
@@ -52,6 +52,14 @@ footer{text-align:center;margin-top:30px;color:#8b949e}
 .tx-table tr.tx-received-recent .tx-age,
 .tx-table tr.tx-received-old .tx-age,
 .tx-table tr.tx-sent .tx-age{color:inherit}
+/* Type column: keep Received/Sent fully visible. */
+.tx-table th:nth-child(2),
+.tx-table td:nth-child(2){
+  overflow:visible;
+  text-overflow:clip;
+  white-space:nowrap;
+}
+
 @media(max-width:700px){
   body{padding:12px}
   header h1{font-size:24px}
@@ -61,7 +69,7 @@ footer{text-align:center;margin-top:30px;color:#8b949e}
   th,td{font-size:11px}
   .buttons{flex-direction:column}
   .tx-table{min-width:0;width:100%;table-layout:fixed;font-size:12px}
-  .tx-table th,.tx-table td{padding:8px 3px;font-size:13px;white-space:nowrap}
+  .tx-table th,.tx-table td{padding:7px 3px;font-size:12px;white-space:nowrap}
   .tx-table th:nth-child(1),.tx-table td:nth-child(1){width:16%}
   .tx-table th:nth-child(2),.tx-table td:nth-child(2){width:13%}
   .tx-table th:nth-child(3),.tx-table td:nth-child(3){width:13%}
