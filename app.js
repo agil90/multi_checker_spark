@@ -20,6 +20,11 @@ const resultContainer = document.getElementById("resultContainer");
 
 let results = [];
 
+// Akumulasi khusus transaksi Received berwarna kuning (Received hari ini).
+let totalYellowReceivedCount = 0;
+let totalYellowReceivedBtc = 0;
+let totalYellowReceivedUsd = 0;
+
 uploadBtn.addEventListener("click", () => fileInput.click());
 fileInput.addEventListener("change", loadTxtFile);
 startBtn.addEventListener("click", startChecking);
@@ -39,6 +44,9 @@ function loadTxtFile(event) {
 function resetDashboard() {
     results = [];
     resultContainer.innerHTML = "";
+    totalYellowReceivedCount = 0;
+    totalYellowReceivedBtc = 0;
+    totalYellowReceivedUsd = 0;
     usdTotal.textContent = "$0.00";
     btcTotal.textContent = "0 BTC";
     tokenUsd.textContent = "$0.00";
@@ -101,6 +109,7 @@ async function startChecking() {
             progressText.textContent = `${checked} / ${addresses.length}`;
         }
     } finally {
+        renderYellowReceivedSummary();
         exportBtn.disabled = results.length === 0;
         startBtn.disabled = false;
     }
@@ -268,7 +277,50 @@ function addRow(item) {
             </td>`;
 
         tbody.appendChild(row);
+
+        // Hanya transaksi Received hari ini (kuning) yang masuk akumulasi.
+        if (recentReceived) {
+            totalYellowReceivedCount += 1;
+            totalYellowReceivedBtc += sats / 100000000;
+            totalYellowReceivedUsd += Number(tx.valueUsd || 0);
+        }
     });
+
+    renderYellowReceivedSummary();
+}
+
+function renderYellowReceivedSummary() {
+    let summary = document.getElementById("yellowReceivedSummary");
+
+    if (!summary) {
+        summary = document.createElement("div");
+        summary.id = "yellowReceivedSummary";
+        summary.className = "yellow-summary";
+        resultContainer.prepend(summary);
+    } else if (summary.parentElement !== resultContainer) {
+        resultContainer.prepend(summary);
+    }
+
+    summary.innerHTML = `
+        <div class="yellow-summary-title">
+            <span class="yellow-summary-logo">⚡</span>
+            <strong>TOTAL SUMMARY</strong>
+        </div>
+        <div class="yellow-summary-table">
+            <div class="yellow-summary-cell">
+                <span>Total Received</span>
+                <strong>${totalYellowReceivedCount}</strong>
+            </div>
+            <div class="yellow-summary-cell">
+                <span>Total Received (BTC)</span>
+                <strong>${totalYellowReceivedBtc.toFixed(8)} BTC</strong>
+            </div>
+            <div class="yellow-summary-cell">
+                <span>Total Received (USD)</span>
+                <strong>$${totalYellowReceivedUsd.toFixed(2)}</strong>
+            </div>
+        </div>
+    `;
 }
 
 function addErrorRow(address) {

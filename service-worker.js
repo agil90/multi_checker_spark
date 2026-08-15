@@ -1,8 +1,8 @@
-const CACHE_NAME = "lightning-checker-pwa-v1.2";
+const CACHE_NAME = "lightning-checker-pwa-v1.3";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./style.css",
+  "./style.css?v=20260815",
   "./app.js",
   "./api.js",
   "./csv.js",

@@ -117,3 +117,63 @@ footer{text-align:center;margin-top:30px;color:#8b949e}
 /* Final transaction text-color enforcement */
 .tx-table td.tx-age,
 .tx-table td.tx-age small{font-weight:700}
+
+
+/* Akumulasi Received kuning */
+.yellow-summary{
+  order:-1;
+  background:#161b22;
+  border:1px solid #30363d;
+  border-radius:12px;
+  padding:12px;
+  margin-top:0;
+}
+.yellow-summary-title{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#f2cc60;
+  font-size:15px;
+  margin-bottom:10px;
+}
+.yellow-summary-logo{
+  width:28px;
+  height:28px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #f2cc60;
+  border-radius:7px;
+  font-size:16px;
+}
+.yellow-summary-table{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border:1px solid #30363d;
+  border-radius:8px;
+  overflow:hidden;
+}
+.yellow-summary-cell{
+  padding:9px 7px;
+  text-align:center;
+  border-right:1px solid #30363d;
+}
+.yellow-summary-cell:last-child{border-right:0}
+.yellow-summary-cell span{
+  display:block;
+  color:#8b949e;
+  font-size:11px;
+  margin-bottom:4px;
+}
+.yellow-summary-cell strong{
+  display:block;
+  color:#f2cc60;
+  font-size:15px;
+}
+@media(max-width:700px){
+  .yellow-summary{padding:10px}
+  .yellow-summary-title{font-size:14px}
+  .yellow-summary-cell{padding:8px 4px}
+  .yellow-summary-cell span{font-size:10px}
+  .yellow-summary-cell strong{font-size:13px}
+}
