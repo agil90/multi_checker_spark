@@ -31,7 +31,7 @@ footer{text-align:center;margin-top:30px;color:#8b949e}
 .wallet-list{display:flex;flex-direction:column;gap:16px}
 .wallet-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:14px}
 .wallet-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.wallet-address{color:#1f4e9e;font-weight:bold;font-size:17px;word-break:break-all;line-height:1.25}
+.wallet-address{color:#1F6FEB;font-weight:bold;font-size:17px;word-break:break-all;line-height:1.25}
 .wallet-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
 .wallet-item span{display:block;color:#8b949e;font-size:12px}
 .wallet-item strong{font-size:16px}
