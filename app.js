@@ -61,9 +61,32 @@ function resetDashboard() {
 async function startChecking() {
     resetDashboard();
 
+    // Bisa menerima:
+    // 1. spark1...
+    // 1) spark1...
+    // 1 - spark1...
+    // atau langsung spark1...
+    // Nomor urut hanya untuk tampilan dan tidak dikirim ke API.
     const addresses = addressInput.value
         .split("\n")
-        .map(a => a.trim())
+        .map((line, index) => {
+            const original = line.trim();
+            if (!original) return null;
+
+            // Hapus nomor urut di awal baris, misalnya:
+            // 1. spark1...
+            // 1) spark1...
+            // 1 - spark1...
+            // 1: spark1...
+            const address = original.replace(/^\s*\d+\s*[.)\-:]\s*/, "").trim();
+
+            if (!address) return null;
+
+            return {
+                inputNumber: index + 1,
+                address
+            };
+        })
         .filter(Boolean);
 
     if (!addresses.length) {
@@ -80,14 +103,18 @@ async function startChecking() {
     startBtn.disabled = true;
 
     try {
-        for (const address of addresses) {
+        for (const entry of addresses) {
+            const { inputNumber, address } = entry;
+
             progressText.textContent = `Checking ${checked + 1} / ${addresses.length}`;
 
             try {
+                // Yang dikirim ke API hanya address bersih, tanpa nomor urut.
                 const result = await checkAddress(address);
                 checked++;
 
                 if (result.success) {
+                    result.inputNumber = inputNumber;
                     results.push(result);
                     totalUsd += Number(result.usd || 0);
                     totalBtc += Number(result.btcSoft || 0) + Number(result.btcHard || 0);
@@ -95,12 +122,12 @@ async function startChecking() {
                     totalToken += Number(result.tokenUsd || 0);
                     addRow(result);
                 } else {
-                    addErrorRow(address);
+                    addErrorRow(address, inputNumber);
                 }
             } catch (err) {
                 console.error(err);
                 checked++;
-                addErrorRow(address);
+                addErrorRow(address, inputNumber);
             }
 
             updateDashboard(totalUsd, totalBtc, totalHardBtc, totalToken);
@@ -194,7 +221,9 @@ function short(value, length = 10) {
 }
 
 function addRow(item) {
+    // Pertahankan nomor urut dari daftar input, walaupun ada address yang error.
     const number = results.length - 1;
+    const displayNumber = item.inputNumber ?? (number + 1);
     const card = document.createElement("div");
     card.className = "wallet-card";
 
@@ -202,7 +231,7 @@ function addRow(item) {
     const address = String(item.address || "-");
 
     card.innerHTML = `
-        <div class="wallet-address">${number + 1}. ${address}</div>
+        <div class="wallet-address">${displayNumber}. ${address}</div>
         <div class="tx-table-wrapper">
             <table class="tx-table">
                 <thead>
@@ -323,12 +352,12 @@ function renderYellowReceivedSummary() {
     `;
 }
 
-function addErrorRow(address) {
+function addErrorRow(address, inputNumber = null) {
     const card = document.createElement("div");
     card.className = "wallet-card";
     card.innerHTML = `
         <div class="wallet-header"><div class="wallet-status error">🔴 ERROR</div></div>
-        <div class="wallet-address">${address}</div>
+        <div class="wallet-address">${inputNumber ? inputNumber + ". " : ""}${address}</div>
         <div class="wallet-grid">
             <div class="wallet-item"><span>Status</span><strong>API Error</strong></div>
         </div>`;
